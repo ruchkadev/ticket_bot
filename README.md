@@ -1,66 +1,69 @@
-# Telegram Ticket Bot + FastAPI Landing
+# Telegram Ticket Bot + FastAPI Landing Page
 
-Этот проект — простой Telegram-бот, который собирает у пользователя имя и телефон, генерирует уникальный билет с QR-кодом и показывает этот билет на одностраничном сайте, сделанном на FastAPI.
-
----
-
-## Возможности
-
-- Сбор имени и телефона через Telegram-бота  
-- Генерация уникального ID и QR-кода с ссылкой на билет  
-- Сохранение данных пользователей в локальный JSON-файл  
-- Отображение красивой карточки билета с QR-кодом на сайте через FastAPI  
+This project is a simple Telegram bot that collects a user's name and phone number, generates a unique ticket with a QR code, and displays it on a landing page powered by FastAPI.
 
 ---
 
-## Настройка
+## Features
 
-В файле `bot.py` найдите строку с переменной `TOKEN` (59-я строка) и вставьте туда ваш токен от Telegram-бота:
+- Collects name and phone number via a Telegram bot  
+- Generates a unique ticket ID and a QR code with a link to the ticket  
+- Saves user data to a local JSON file  
+- Displays a nicely styled ticket page with a QR code using FastAPI  
+
+---
+
+## Setup
+
+In the `bot.py` file, locate the `TOKEN` variable (line 59) and replace it with your actual Telegram bot token:
 
 ```python
-TOKEN = "ВАШ_ТОКЕН_БОТА"
+TOKEN = "YOUR_BOT_TOKEN"
 ```
 
 ---
 
-## Запуск проекта
+## Running the Project
 
-1. Запустите FastAPI сервер с помощью uvicorn:
+1. Start the FastAPI server using uvicorn:
 
-```
+```bash
 uvicorn web:app --reload
 ```
 
-2. В отдельном терминале запустите Telegram-бота:
+2. In a separate terminal, run the Telegram bot:
 
-```
+```bash
 python bot.py
 ```
 
 ---
 
-## Как использовать
+## How to Use
 
-- Откройте Telegram и найдите своего бота  
-- Напишите команду `/start`  
-- Следуйте инструкциям: введите своё имя и номер телефона  
-- Получите QR-код и ссылку на персональный билет  
-- Перейдите по ссылке, чтобы посмотреть билет на сайте  
-
----
-
-## Структура проекта
-
-- `bot.py` — логика Telegram-бота, генерация билетов и QR-кодов  
-- `web.py` — FastAPI-приложение, отдаёт страницу с билетом  
-- `templates/ticket.html` — шаблон страницы билета  
-- `database.json` — база данных пользователей  
-- `tickets/qr/` — папка с сгенерированными QR-кодами  
+- Open Telegram and find your bot  
+- Send the `/start` command  
+- Follow the instructions: enter your name and phone number  
+- Receive a QR code and a link to your personal ticket  
+- Open the link to view your ticket on the landing page  
 
 ---
 
-## Лицензия
+## Project Structure
+
+```
+.
+├── bot.py               # Telegram bot logic, ticket and QR generation
+├── web.py               # FastAPI app that serves the ticket page
+├── templates/
+│   └── ticket.html      # HTML template for the ticket
+├── database.json        # User data storage
+└── tickets/
+    └── qr/              # Folder with generated QR codes
+```
+
+---
+
+## License
 
 MIT License
-
-
